@@ -40,7 +40,7 @@ public class PlayerGroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.Q) && player.skill.parry.parryUnlocked)
             stateMachine.ChangeState(player.counterAttack);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.J))
             stateMachine.ChangeState(player.primaryAttack);
 
         if (!player.IsGroundDetected())

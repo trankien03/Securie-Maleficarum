@@ -85,6 +85,8 @@ public class Player : Entity
         defaultMoveSpeed = moveSpeed;
         defaultJumpForce = jumpForce;
         defaultDashSpeed = dashSpeed;
+        SaveManager.instance.findAndLoad();
+       
     }
 
 
@@ -158,7 +160,7 @@ public class Player : Entity
             return;
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K)) && SkillManager.instance.dash.CanUseSkill())
         {
 
             dashDir = Input.GetAxisRaw("Horizontal");

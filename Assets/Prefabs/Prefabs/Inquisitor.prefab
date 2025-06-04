@@ -4836,8 +4836,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3189546420621750284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.13, y: -0.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.4, y: -1.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3189546421562166725}
@@ -4978,7 +4978,7 @@ Transform:
   m_GameObject: {fileID: 3189546421052675012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3189546421562166725}
@@ -10070,8 +10070,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3189546421562166727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.88, y: -1.59, z: 0}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
+  m_LocalPosition: {x: -8.17, y: -0.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3189546422195587898}
@@ -10103,11 +10103,11 @@ MonoBehaviour:
   knockbackOffset: {x: 0, y: 0}
   knockbackDuration: 0.3
   attackCheck: {fileID: 3189546420621750283}
-  attackCheckRadius: 0.8
+  attackCheckRadius: 1.5
   groundCheck: {fileID: 3189546420780114355}
-  groundCheckDistance: 0.15
+  groundCheckDistance: 1.7
   wallCheck: {fileID: 3189546421072639380}
-  wallCheckDistance: 0.05
+  wallCheckDistance: 0.3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -10116,9 +10116,9 @@ MonoBehaviour:
   - {x: 1, y: 2.5}
   - {x: 4, y: 1.5}
   counterAttackDuration: 0.2
-  moveSpeed: 8
-  jumpForce: 14
-  swordReturnImpact: 10
+  moveSpeed: 12
+  jumpForce: 24
+  swordReturnImpact: 14
   dashSpeed: 25
   dashDuration: 0.2
 --- !u!70 &3189546421562166723
@@ -10134,8 +10134,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06784159, y: -0.27535737}
-  m_Size: {x: 0.79531085, y: 2.093448}
+  m_Offset: {x: 0.10960469, y: -1.3985901}
+  m_Size: {x: 0.8368619, y: 2.7906103}
   m_Direction: 0
 --- !u!50 &3189546421562166724
 Rigidbody2D:
@@ -10183,7 +10183,7 @@ MonoBehaviour:
     baseValue: 5
     modifiers: 
   damage:
-    baseValue: 15
+    baseValue: 25
     modifiers: 
   critChance:
     baseValue: 25

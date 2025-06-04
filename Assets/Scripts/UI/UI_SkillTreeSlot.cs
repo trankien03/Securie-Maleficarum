@@ -12,8 +12,11 @@ public class UI_SkillTreeSlot : MonoBehaviour , IPointerEnterHandler , IPointerE
 
     [SerializeField] private int skillCost;
     [SerializeField] private string skillName;
+    [SerializeField] private string skillNameVN;
     [TextArea]
     [SerializeField] private string skillDescription;
+    [TextArea]
+    [SerializeField] private string skillDescriptionVN;
     [SerializeField] private Color lockedSkillColor;
 
 

@@ -221,7 +221,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   damage:
-    baseValue: 105
+    baseValue: 50
     modifiers: 
   critChance:
     baseValue: 0
@@ -323,7 +323,7 @@ MonoBehaviour:
   attackCheck: {fileID: 7546619777614005732}
   attackCheckRadius: 0.8
   groundCheck: {fileID: 7546619778271502296}
-  groundCheckDistance: 0.68
+  groundCheckDistance: 0.66
   wallCheck: {fileID: 7546619777209899320}
   wallCheckDistance: 1
   whatIsGround:
@@ -335,7 +335,7 @@ MonoBehaviour:
   stunDuration: 1
   stunDirection: {x: 10, y: 12}
   counterImage: {fileID: 7546619777122186339}
-  moveSpeed: 1.5
+  moveSpeed: 2
   idleTime: 2
   battleTime: 5
   agroDistance: 3.5
@@ -407,6 +407,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -1768169261
   m_SortingOrder: 19

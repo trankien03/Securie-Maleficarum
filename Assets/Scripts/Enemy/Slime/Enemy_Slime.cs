@@ -71,12 +71,12 @@ public class Enemy_Slime : Enemy
     public override void Die()
     {
         base.Die();
-
+        if (slimeType == SlimeType.big) GameConditionManager.instance.addingEnemyCount();
         stateMachine.ChangeState(deadState);
 
         if (slimeType == SlimeType.small)
             return;
-
+        
         CreateSlimes(slimesToCreate, slimePrefab);
 
     }

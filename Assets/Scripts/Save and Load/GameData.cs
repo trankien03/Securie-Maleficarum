@@ -5,12 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
+
+
     public int currency;
 
     public SerializableDictionary<string, bool> skillTree;
     public SerializableDictionary<string, int> inventory;
     public List<string> equipmentId;
-
+    public SerializableDictionary<string, float> highgestPoint;
 
     public SerializableDictionary<string, bool> checkpoints;
     public string closestCheckpointId;
@@ -23,6 +25,7 @@ public class GameData
 
     public GameData()
     {
+
         this.lostCurrencyX = 0;
         this.lostCurrencyY = 0;
         this.lostCurrencyAmount = 0;
@@ -37,5 +40,7 @@ public class GameData
         checkpoints = new SerializableDictionary<string, bool>();
 
         volumeSettings= new SerializableDictionary<string, float>();
+        //Changing everytime when updating stage progress.
+        highgestPoint = new SerializableDictionary<string, float>(); 
     }
 }

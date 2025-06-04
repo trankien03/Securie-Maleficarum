@@ -16,6 +16,7 @@ public class PlayerStats : CharacterStats
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
+        GameConditionManager.instance.takeHit();
     }
 
     protected override void Die()
@@ -23,10 +24,10 @@ public class PlayerStats : CharacterStats
         base.Die();
         player.Die();
 
-        GameManager.instance.lostCurrencyAmount = PlayerManager.instance.currency;
-        PlayerManager.instance.currency = 0;
+    //    GameManager.instance.lostCurrencyAmount = PlayerManager.instance.currency;
+    //    PlayerManager.instance.currency = 0;
 
-        GetComponent<PlayerItemDrop>()?.GenerateDrop();
+     //   GetComponent<PlayerItemDrop>()?.GenerateDrop();
     }
 
     protected override void DecreaseHealthBy(int _damage)
@@ -57,7 +58,7 @@ public class PlayerStats : CharacterStats
     {
         player.skill.dodge.CreateMirageOnDodge();
     }
-
+ 
     public void CloneDoDamage(CharacterStats _targetStats,float _multiplier)
     {
         if (TargetCanAvoidAttack(_targetStats))

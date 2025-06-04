@@ -74,6 +74,7 @@ public class Enemy_Archer : Enemy
     public override void Die()
     {
         base.Die();
+        GameConditionManager.instance.addingEnemyCount();
         stateMachine.ChangeState(deadState);
 
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class UI : MonoBehaviour, ISaveManager
 {
     [Header("End screen")]
+    [SerializeField] private GameObject deadUI;
     [SerializeField] private UI_FadeScreen fadeScreen;
     [SerializeField] private GameObject endText;
     [SerializeField] private GameObject restartButton;
@@ -15,7 +16,6 @@ public class UI : MonoBehaviour, ISaveManager
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject optionsUI;
     [SerializeField] private GameObject inGameUI;
-
 
 
     public UI_SkillToolTip skillToolTip;
@@ -53,10 +53,10 @@ public class UI : MonoBehaviour, ISaveManager
             SwitchWithKeyTo(craftUI);
 
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.M))
             SwitchWithKeyTo(skillTreeUI);
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.N))
             SwitchWithKeyTo(optionsUI);
 
        
@@ -120,19 +120,27 @@ public class UI : MonoBehaviour, ISaveManager
     public void SwitchOnEndScreen()
     {
         fadeScreen.FadeOut();
+       
         StartCoroutine(EndScreenCorutione());
+
     }
+    
 
     IEnumerator EndScreenCorutione()
     {
-        yield return new WaitForSeconds(1);
-        endText.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
-        restartButton.SetActive(true);
+        yield return new WaitForSeconds(1);         deadUI.SetActive(true);
+//        yield return new WaitForSeconds(1);
+ //       endText.SetActive(true);
+  //      yield return new WaitForSeconds(1.5f);
+  //      restartButton.SetActive(true);
 
     }
 
     public void RestartGameButton() => GameManager.instance.RestartScene();
+
+    public void BackToTheMainMenuButton() => GameManager.instance.BackToTheMainMenu();
+
+    public void NextStageButton() => GameManager.instance.NextStage();
 
     public void LoadData(GameData _data)
     {

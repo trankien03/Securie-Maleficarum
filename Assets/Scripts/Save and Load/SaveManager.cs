@@ -18,6 +18,7 @@ public class SaveManager : MonoBehaviour
     [ContextMenu("Delete save file")]
     public void DeleteSavedData()
     {
+        Debug.Log("Deleted Data");
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName,encryptData);
         dataHandler.Delete();
 
@@ -42,6 +43,16 @@ public class SaveManager : MonoBehaviour
         LoadGame();
         
         
+    }
+
+    public void findAndLoad()
+    {
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+        saveManagers = FindAllSaveManagers();
+
+        //Invoke("LoadGame", .05f);
+
+        LoadGame();
     }
 
     public void NewGame()

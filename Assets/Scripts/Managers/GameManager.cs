@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour, ISaveManager
     [SerializeField] private Checkpoint[] checkpoints;
     [SerializeField] private string closestCheckpointId;
 
+
+
     [Header("Lost currency")]
     [SerializeField] private GameObject lostCurrencyPrefab;
     public int lostCurrencyAmount;
@@ -36,10 +38,10 @@ public class GameManager : MonoBehaviour, ISaveManager
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.Z))
             RestartScene();
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!pasuedGame)
             {
@@ -62,6 +64,20 @@ public class GameManager : MonoBehaviour, ISaveManager
     }
 
     
+    public void NextStage()
+    {
+        SaveManager.instance.SaveGame();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+
+    public void BackToTheMainMenu()
+    {
+        SaveManager.instance.SaveGame();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
 
     public void LoadData(GameData _data) => StartCoroutine(LoadWithDelay(_data));
 

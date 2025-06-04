@@ -20,6 +20,7 @@ public class SkeletonDeadState : EnemyState
         enemy.cd.enabled = false;
 
         stateTimer = .15f;
+        Debug.Log("Skeleton Dead");
     }
 
     public override void Update()

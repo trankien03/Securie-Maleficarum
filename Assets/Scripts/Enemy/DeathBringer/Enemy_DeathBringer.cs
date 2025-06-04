@@ -60,6 +60,7 @@ public class Enemy_DeathBringer : Enemy
     public override void Die()
     {
         base.Die();
+        GameConditionManager.instance.addingBossCount();
         stateMachine.ChangeState(deadState);
 
     }
@@ -74,7 +75,7 @@ public class Enemy_DeathBringer : Enemy
         if (player.rb.velocity.x != 0)
             xOffset = player.facingDir * spellOffset.x;
 
-        Vector3 spellPosition = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + spellOffset.y);
+        Vector3 spellPosition = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + spellOffset.y - 1.5f);
 
         GameObject newSpell = Instantiate(spellPrefab, spellPosition, Quaternion.identity);
         newSpell.GetComponent<DeathBringerSpell_Controller>().SetupSpell(stats);
