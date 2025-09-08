@@ -1,5 +1,6 @@
 # Securie-Maleficarum
 Do an tot nghiep sth sth
 
-Code voi resource o Maingame
+Code voi resource o master
+
 
